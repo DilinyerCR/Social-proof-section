@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --Very-Dark-Magenta: hsl(300, 43%, 22%);
+    --Soft-Pink: hsl(333, 80%, 67%);
+    --Dark-Grayish-Magenta: hsl(303, 10%, 53%);
+    --Light-Grayish-Magenta: hsl(300, 24%, 94%);
+    --White: hsl(0, 0%, 100%);
+}
+body {
+    background: url(/images/bg-pattern-top-mobile.svg), url(/images/bg-pattern-bottom-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: top left, bottom right;
+    font-size: 15px;
+    font-family: 'League Spartan', sans-serif;
+}
+.main-container {
+    margin: 80px auto;
+}
+
+/* ? ------H E A D E R   S E C T I O N------ */
+header h1 {
+    margin: 0 60px 30px 60px;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 32px;
+    color: var(--Very-Dark-Magenta);
+    text-align: center;
+}
+header p {
+    margin: 0 19px 30px 19px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 500;
+    color: var(--Dark-Grayish-Magenta);
+}
+
+/* ? ------R A T E D   S E C T I O N------ */
+.rated-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.stars-containers {
+    width: 325px;
+    height: 80px;
+    margin-top: 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    color: var(--Very-Dark-Magenta);
+    background-color: var(--Light-Grayish-Magenta);
+}
+
+/* ? ------C A R D S   S E C T I O N------ */
+.cards-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 45px;
+}
+.boxes {
+    width: 325px;
+    height: 245px;
+    margin-top: 17px;
+    border-radius: 8px;
+    background-color: var(--Very-Dark-Magenta);
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+
+}
+.boxes img {
+    width: 42px;
+    height: 42px;
+    margin: 40px 0 0 35px;
+    border-radius: 50%;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+.name {
+    margin: 15px 120px 0px 0;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    place-self: center;
+    color: var(--White);
+    font-weight: 700;
+}
+.text {
+    margin: 60px 0px 0px 22px;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    color: var(--Soft-Pink);
+}
+.boxes p {
+    margin: 26px 40px 60px 40px;
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+    color: var(--White);
+    line-height: 22px;
+    font-size: 16px;
+    
+}
+
+/* ? ------F O O T E R   S E C T I O N------ */
+footer {
+    width: 80%;
+    height: 30px;
+    margin: 50px auto 0 auto;
+    border-radius: 10px;
+}
+.attribution {
+    padding-top: 4px;
+    font-size: 15px;
+    text-align: center;
+  }
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+    text-decoration: none;
+  }
+
+/* ? ------M E D I A   Q U E R I E S------ */
+
+/* ? ------768px------ */
+@media only screen and (min-width: 376px) {
+    .star1 {
+        align-self: flex-start;
+    }
+    .star3 {
+        align-self: flex-end;
+    }
+
+    .box1 {
+        align-self: flex-start;
+    }
+    .box3 {
+        align-self: flex-end;
+    }
+    .cards-section , .rated-section {
+        padding: 0 20px;
+    }
+}
+
+/* ? ------768px------ */
+@media only screen and (min-width: 768px) {
+    body {
+        background: url(/images/bg-pattern-top-desktop.svg), url(/images/bg-pattern-bottom-desktop.svg);
+        background-repeat: no-repeat;
+        background-position: top left, bottom right;
+        background-size: 400px;
+    }
+    .stars-containers {
+        flex-direction: row;
+        height: 50px;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .cards-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .box1 {
+        grid-column: 1 / 2;
+        justify-self: center;
+    }
+    .box2 {
+        grid-column: 2 / 3;
+        justify-self: center;
+    }
+    .box3 {
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+        justify-self: center;
+    }
+}
+
+/* ? ------894px------ */
+@media only screen and (min-width: 894px) {
+    .main-container {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        row-gap: 25px;
+    }
+    header {
+        grid-column: 1 / 6;
+    }
+    .rated-section {
+        grid-column: 6 / -1;
+    }
+    .cards-section {
+        grid-column: 1 / -1;
+    }
+    footer {
+        grid-column: 1 / -1;
+    }
+}
+
+/* ? ------1160px------ */
+@media only screen and (min-width: 1160px) {
+    body {
+        background-size: 580px;
+    }
+    .main-container {
+        margin: 125px auto;
+        max-width: 1110px;
+    }
+    header h1 {
+        text-align: start;
+        /* font-size: 45px; */
+        line-height: 40px;
+    }
+    header p {
+        margin: 0 0 0 60px;
+        text-align: start;
+        line-height: 22px;
+    }
+    .rated-section {
+        margin: 0 0 0 80px;
+        width: 450px;
+        display: flex;
+        justify-content: space-around;
+    }
+    .stars-containers {
+        margin: 0 ;
+    }
+    .cards-section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 310px;
+    }
+    .box1 {
+        justify-self: flex-start;
+    }
+    .attribution {
+        margin-top: 40px;
+        font-size: 20px;
+    }
+}
+
+/* ? ------1440px------ */
+@media only screen and (min-width: 1440px) {
+    header h1 {
+        text-align: start;
+        font-size: 45px;
+        line-height: 40px;
+    }
+    header p {
+        width: 450px;
+        margin: 0 0 0 60px;
+        text-align: start;
+        line-height: 22px;
+    }
+    .rated-section {
+        margin: 0 0 0 100px;
+        width: 450px;
+    }
+    .stars-containers {
+        height: 46px;
+    }
+    .stars-containers img {
+        width: 13px;
+    }
+    .stars-containers h4 {
+        font-size: 15px;
+    }
+    .cards-section {
+        width: 950px;
+        height: 250px;
+        margin: 40px 0 0 60px;
+        padding: 0;
+    }
+    .boxes {
+        margin: 0;
+        width: 300px;
+        height: 210px;
+    }
+    .boxes p {
+        font-size: 13px;
+        line-height: 19px;
+    }
+    .boxes .name {
+        width: 100px;
+        margin-left: 22px;
+    }
+    footer {
+        margin: 0 auto;
+    }
+    .attribution a {
+        font-weight: 700;
+        color: hsl(300, 32%, 24%);
+    }
+    .attribution a:hover {
+        color: hsl(300, 20%, 47%);
+        transition: 0.5s;
+    }
+
+}
